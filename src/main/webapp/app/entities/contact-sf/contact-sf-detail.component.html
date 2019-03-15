@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contactSF">
+            <h2><span>Contact SF</span> {{contactSF.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Custom Ext Id Field</span></dt>
+                <dd>
+                    <span>{{contactSF.customExtIdField}}</span>
+                </dd>
+                <dt><span>First Name</span></dt>
+                <dd>
+                    <span>{{contactSF.firstName}}</span>
+                </dd>
+                <dt><span>Last Name</span></dt>
+                <dd>
+                    <span>{{contactSF.lastName}}</span>
+                </dd>
+                <dt><span>Account SF</span></dt>
+                <dd>
+                    <div *ngIf="contactSF.accountSF">
+                        <a [routerLink]="['/account-sf', contactSF.accountSF?.id, 'view']">{{contactSF.accountSF?.customExtIdField}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contact-sf', contactSF.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
