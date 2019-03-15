@@ -1,0 +1,36 @@
+{
+    "name": "AccountSF",
+    "fields": [
+        {
+            "fieldName": "customExtIdField",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "contactSF",
+            "otherEntityRelationshipName": "accountSF",
+            "relationshipName": "contactSF"
+        }
+    ],
+    "changelogDate": "20190315045640",
+    "entityTableName": "account_sf",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
