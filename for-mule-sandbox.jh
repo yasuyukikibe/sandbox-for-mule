@@ -1,0 +1,14 @@
+entity AccountSF {
+	customExtIdField String required,
+	name String required
+}
+
+entity ContactSF {
+	customExtIdField String required,
+	firstName String,
+	lastName String required
+}
+
+relationship OneToMany {
+  AccountSF{contactSF} to ContactSF{accountSF(customExtIdField)}
+}
